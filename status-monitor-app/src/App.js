@@ -12,11 +12,11 @@ function App() {
   return (
     <div className="App">
       <h1 className="AppTitle"> Status Monitor </h1>
-      <input type="text" id="websiteInput"></input>
-      <input type="button" id="websiteInputSubmit" onClick={() => {
-        let inputValue = document.getElementById("websiteInput").value;
-        setValue(inputValue);
-      }} value="Setup"></input>
+      <div>
+        <p> Enter a website URL to monitor: </p>
+        <input type="text" id="websiteInput"></input>
+        <input type="button" id="websiteInputSubmit" onClick={() => { setValue(document.getElementById("websiteInput").value); }} value="Setup monitor"></input>
+      </div>
     </div>
   );
 }
