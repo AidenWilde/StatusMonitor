@@ -1,4 +1,5 @@
 import './App.css';
+import Status from './components/website-status.js'
 import React, { useEffect, useState } from 'react';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <p> Enter a website URL to monitor: </p>
         <input type="text" id="websiteInput"></input>
         <input type="button" id="websiteInputSubmit" onClick={() => { setValue(document.getElementById("websiteInput").value); }} value="Setup monitor"></input>
+        <Status website={value}/>
       </div>
     </div>
   );
