@@ -1,5 +1,9 @@
+.AppTitle {
+  text-decoration: underline;
+}
+
 .App {
-  text-align: center;
+  margin: 1em;
 }
 
 .App-logo {
