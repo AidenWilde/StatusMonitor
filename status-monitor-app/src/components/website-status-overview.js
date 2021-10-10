@@ -8,9 +8,6 @@ function WebsiteStatusOverview({propWebsiteUrl}) {
 
     useEffect(() => {
         setWebsiteUrl(propWebsiteUrl);
-        console.log("props changed in website-status.js"); // these aren't getting values passed down properly
-        console.log("prop websiteUrl: " + propWebsiteUrl); 
-        console.log("prop statusCode: " + statusCode);
     }, [propWebsiteUrl, statusCode])
 
     return (

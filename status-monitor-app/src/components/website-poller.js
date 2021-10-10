@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 function WebsitePoller({ websiteUrl, updateParentData }) {
     const [poller, setPoller] = useState(null);
     useEffect(() => {
+        
     });
 
     if(websiteUrl !== null && websiteUrl !== undefined){
@@ -29,7 +30,7 @@ function WebsitePoller({ websiteUrl, updateParentData }) {
 
 function httpGetAsync(websiteUrl, callback)
 {
-    console.log("making http request to " + websiteUrl)
+    console.log("Requesting resource from " + websiteUrl)
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() { 
         if (xmlHttp.readyState === 4) { // 4 = DONE - https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState

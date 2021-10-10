@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 function App() {
   const [value, setValue] = useState(null);
   useEffect(() => {
-    console.log("value updated in App.js: " + value);
+    
   });
 
   return (
