@@ -1,22 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import WebsitePoller from './website-poller';
 
-function WebsiteStatus({ websiteUrl }) {
-    const [props, setPropsValue] = useState({websiteUrl: websiteUrl, statusCode: null});
-    useEffect(() => {
-        console.log("props changed in website-status.js"); // these aren't getting values passed down properly
-        console.log("prop websiteUrl: " + props.websiteUrl); 
-        console.log("prop statusCode: " + props.statusCode);
-    })
+function WebsiteStatus({propWebsiteUrl}) {
+    const [websiteUrl, setWebsiteUrl] = useState(null);
+    const [statusCode, setStatusCode] = useState(0);
 
-    if(props.websiteUrl !== null && props.websiteUrl !== undefined) {
-        return (
-            <div>
-                <WebsitePoller websiteUrl={ props.websiteUrl } updateParentData={ UpdateStatusFromChildComponent }/>
-                <p> Status code: {props.statusCode} </p>
-            </div>
-        )
-    } else return null;
+    useEffect(() => {
+        setWebsiteUrl(propWebsiteUrl);
+        console.log("props changed in website-status.js"); // these aren't getting values passed down properly
+        console.log("prop websiteUrl: " + propWebsiteUrl); 
+        console.log("prop statusCode: " + statusCode);
+    }, [propWebsiteUrl, statusCode])
+
+    return (
+        <div>
+            <WebsitePoller websiteUrl={websiteUrl} updateParentData={ UpdateStatusFromChildComponent }/>
+            <p> Status code: {statusCode} </p>
+        </div>
+    )
+
+    function UpdateStatusFromChildComponent(status) {
+        console.log("parent component website-status status code updated")
+        setStatusCode(status);
+    }
+}
     
     
     // if(statusCode && website !== null && website !== undefined && website !== "") {
@@ -31,13 +38,5 @@ function WebsiteStatus({ websiteUrl }) {
     //     return null;
     // }
 
-    function UpdateStatusFromChildComponent(status) {
-        console.log("parent component website-status status code updated")
-        setPropsValue(prevState => ({
-            ...prevState,
-            statusCode: status
-        }));
-    }
-}
 
 export default WebsiteStatus;

@@ -15,7 +15,7 @@ function App() {
         <p> Enter a website URL to monitor: </p>
         <input type="text" id="websiteInput"></input>
         <input type="button" id="websiteInputSubmit" onClick={() => { setValue(document.getElementById("websiteInput").value); }} value="Update website to poll"></input>
-        <WebsiteStatus websiteUrl={value}/>
+        <WebsiteStatus propWebsiteUrl={value}/>
       </div>
     </div>
   );
