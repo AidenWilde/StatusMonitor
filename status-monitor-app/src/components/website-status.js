@@ -25,6 +25,4 @@ function WebsiteStatus({propsStatusCode}) {
     }
 }
     
-
-
 export default WebsiteStatus;

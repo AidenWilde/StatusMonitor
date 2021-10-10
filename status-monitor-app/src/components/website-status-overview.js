@@ -25,19 +25,5 @@ function WebsiteStatusOverview({propWebsiteUrl}) {
         setStatusCode(status);
     }
 }
-    
-    
-    // if(statusCode && website !== null && website !== undefined && website !== "") {
-    //     if(statusCode === 200) {
-    //         return <p>Website "{website}" currently available.</p>; 
-    //     } 
-    //     else { 
-    //         return <p>Website "{website}" is unavailable with HTTP status code: {statusCode}</p> 
-    //     }
-    // }
-    // else {
-    //     return null;
-    // }
-
 
 export default WebsiteStatusOverview;
