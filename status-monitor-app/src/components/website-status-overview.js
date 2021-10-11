@@ -15,10 +15,18 @@ function WebsiteStatusOverview() {
     return (
         <div className="pagebreak">
             <p>Online resource to monitor:</p>
-            <input type="text" id="websiteInput"></input>
-            <input type="button" id="websiteInputSubmit" value="Update website to poll" onClick={() => {setWebsiteUrl(document.getElementById("websiteInput").value);}}></input>
-            <WebsitePoller websiteUrl={websiteUrl} updateParentData={UpdateStatusFromChildComponent}/>
-            <WebsiteStatus propsStatusCode={statusCode} />
+            <input type="text" onKeyUp={($event) => {
+                setWebsiteUrl($event.target.value);
+            }}></input>
+            {
+                websiteUrl !== null && websiteUrl !== undefined && websiteUrl !== "" ? (
+                    <div>
+                        <WebsitePoller websiteUrl={websiteUrl} updateParentData={UpdateStatusFromChildComponent}/>
+                        <WebsiteStatus propsStatusCode={statusCode} />
+                    </div>
+                )
+                 : null
+            }
         </div>
     )
 

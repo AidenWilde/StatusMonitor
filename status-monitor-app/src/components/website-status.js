@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './website-status.css';
 
 function WebsiteStatus({propsStatusCode}) {
-    const [statusCode, setStatusCode] = useState(0);
+    const [statusCode, setStatusCode] = useState(null);
 
     useEffect(() => {
         setStatusCode(propsStatusCode);
