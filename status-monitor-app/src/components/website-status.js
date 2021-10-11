@@ -11,16 +11,16 @@ function WebsiteStatus({propsStatusCode}) {
     if(statusCode === 200) {
         return (
             <div>
-                <p>Website currently available</p>
                 <p>Status code: {statusCode}</p>    
+                <p>🟢</p>
             </div>
         ); 
     } 
     else { 
         return (
             <div>
-                <p>Website currently unavailable</p>
                 <p>Status code: {statusCode}</p>    
+                <p>🔴</p>
             </div>
         ); 
     }

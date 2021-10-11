@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="AppTitle"> Status Monitor </h1>
-      <StatusMonitorOverview/>
+      <StatusMonitorOverview />
     </div>
   );
 }

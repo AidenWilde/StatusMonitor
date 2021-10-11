@@ -8,16 +8,16 @@ function WebsiteStatusOverview() {
     const [statusCode, setStatusCode] = useState(0);
 
     useEffect(() => {
-
-    });
+        if(websiteUrl === undefined) // temporary, incase input changes from defined to undefined
+            setWebsiteUrl("");
+    }, [websiteUrl, statusCode]);
 
     return (
-        <div>
-            <br/>
-            <p>Website URL to monitor:</p>
+        <div className="pagebreak">
+            <p>Online resource to monitor:</p>
             <input type="text" id="websiteInput"></input>
-            <input type="button" id="websiteInputSubmit" onClick={() => { setWebsiteUrl(document.getElementById("websiteInput").value); }} value="Update website to poll"></input>
-            <WebsitePoller websiteUrl={websiteUrl} updateParentData={ UpdateStatusFromChildComponent }/>
+            <input type="button" id="websiteInputSubmit" value="Update website to poll" onClick={() => {setWebsiteUrl(document.getElementById("websiteInput").value);}}></input>
+            <WebsitePoller websiteUrl={websiteUrl} updateParentData={UpdateStatusFromChildComponent}/>
             <WebsiteStatus propsStatusCode={statusCode} />
         </div>
     )

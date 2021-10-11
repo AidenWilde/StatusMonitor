@@ -9,7 +9,7 @@ function WebsitePoller({ websiteUrl, updateParentData }) {
     if(websiteUrl !== null && websiteUrl !== undefined){
         return (
             <div>
-                <p> WebsiteUrl: {websiteUrl} </p>
+                <p> Resource: {websiteUrl} </p>
                 <input type="button" value="Start polling" onClick={() => {
                     let poller = setInterval(() => {
                         httpGetAsync(websiteUrl, (statusCode) => {
