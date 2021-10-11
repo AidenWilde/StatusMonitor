@@ -31,14 +31,13 @@ function WebsitePoller({ websiteUrl, updateParentData }) {
 function httpGetAsync(websiteUrl, callback)
 {
     console.log("Requesting resource from " + websiteUrl)
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() { 
-        if (xmlHttp.readyState === 4) { // 4 = DONE - https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
-            callback(xmlHttp.status);
-        }
-    }
-    xmlHttp.open("GET", websiteUrl, true);
-    xmlHttp.send(null);
+    fetch(websiteUrl).then(data => {
+        console.log("got back: " + data.status)
+        callback(data.status);
+    }).catch(() => {
+        console.log("an error occured sending a GET request to " + websiteUrl);
+        return 0;
+    });
 }
 
 export default WebsitePoller;
