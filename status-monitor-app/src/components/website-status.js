@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './website-status.css';
 
 function WebsiteStatus({propsStatusCode}) {
     const [statusCode, setStatusCode] = useState(0);

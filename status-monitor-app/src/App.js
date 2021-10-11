@@ -1,22 +1,11 @@
 import './App.css';
-import WebsiteStatusOverview from './components/website-status-overview.js'
-import React, { useEffect, useState } from 'react';
+import StatusMonitorOverview from './components/status-monitor-overview.js';
 
 function App() {
-  const [value, setValue] = useState(null);
-  useEffect(() => {
-    
-  });
-
   return (
     <div className="App">
       <h1 className="AppTitle"> Status Monitor </h1>
-      <div>
-        <p> Enter a website URL to monitor: </p>
-        <input type="text" id="websiteInput"></input>
-        <input type="button" id="websiteInputSubmit" onClick={() => { setValue(document.getElementById("websiteInput").value); }} value="Update website to poll"></input>
-        <WebsiteStatusOverview propWebsiteUrl={value}/>
-      </div>
+      <StatusMonitorOverview/>
     </div>
   );
 }

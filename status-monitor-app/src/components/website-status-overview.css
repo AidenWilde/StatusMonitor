@@ -1,0 +1,8 @@
+p {
+    font-size: small;
+    display: inline-block;
+}
+
+input {
+    margin-left: 1em;
+}
