@@ -11,7 +11,8 @@ function WebsitePoller({ websiteUrl, updateParentData }) {
             <div>
                 <p> Resource: {websiteUrl} </p>
                 {
-                    poller === null ? 
+                    poller === null 
+                    ? 
                     <input type="button" value="Start polling" onClick={() => {
                         let poller = setInterval(() => {
                             httpGetAsync(websiteUrl, (statusCode) => {
