@@ -10,18 +10,22 @@ function WebsitePoller({ websiteUrl, updateParentData }) {
         return (
             <div>
                 <p> Resource: {websiteUrl} </p>
-                <input type="button" value="Start polling" onClick={() => {
-                    let poller = setInterval(() => {
-                        httpGetAsync(websiteUrl, (statusCode) => {
-                            updateParentData(statusCode);
-                        });
-                    }, 5000); 
-                    setPoller(poller);
-                }}></input>
-            
-            <input type="button" value="Stop polling" onClick={() => {
-                clearInterval(poller);
-            }}></input>
+                {
+                    poller === null ? 
+                    <input type="button" value="Start polling" onClick={() => {
+                        let poller = setInterval(() => {
+                            httpGetAsync(websiteUrl, (statusCode) => {
+                                updateParentData(statusCode);
+                            });
+                        }, 5000); 
+                        setPoller(poller);
+                    }}></input>
+                    :
+                    <input type="button" value="Stop polling" onClick={() => {
+                        clearInterval(poller);
+                        setPoller(null);
+                    }}></input>
+                }
             </div>
         )
     }
