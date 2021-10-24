@@ -1,0 +1,17 @@
+.spinnyspin {
+    display: inline-block;
+    margin-left: 2em;
+    margin-right: auto;
+    width: 1.25%;
+    animation: rotation 5s infinite linear;
+
+}
+
+@keyframes rotation {   
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
